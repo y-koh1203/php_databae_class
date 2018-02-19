@@ -120,11 +120,16 @@ class database{
     }
 
     // public function delete(){
-
     // }
 
     // public function update(){
-
     // }
+
+    public function doSql($query){
+        $pdo = $this->openPDO();
+        $res = $pdo->query($sql);
+        $this->closePDO();
+        return $res;
+    }
 } 
 
