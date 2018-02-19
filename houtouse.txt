@@ -1,0 +1,27 @@
+使い方
+
+1.読み込み
+require 'database.php'; ※同じディレクトリにある場合
+
+2.接続パラメータの書き換え
+$dsn , $user , $pass の3つのパラメータを、使用しているDBのものに変更する
+
+3.インスタンスの生成
+$pdo = new database(); ※コピペでOK
+
+4.各種機能を利用
+$res ※結果・戻り値を格納する変数
+
+select : 
+$res = $pdo->select(ここにsql文を入力); ※戻り値は配列
+
+insert : 
+$table = 'test'; //テーブル名
+$arrColumns = array('id','name','age'); //insertしたいカラム
+$arrParams = array('01','test','20');
+
+$pdo->insert($table,$arrColumns,$arrParams); //insert実行
+
+query :
+$res = $pdo->doSql(ここにsql文を入力); //自由にsql文を実行可能
+
